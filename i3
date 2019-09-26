@@ -1,0 +1,1 @@
+/home/kitaev-aa/.config/i3/
