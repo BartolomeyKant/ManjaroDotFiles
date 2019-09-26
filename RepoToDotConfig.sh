@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # Copy dotfiles form repositori to .config directory
 
 . ./SyncRepoConfig #setting for sync dirrectories
