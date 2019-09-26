@@ -1,0 +1,9 @@
+#SETTINGS FOR SYNCRONIZATION DOTFILES
+
+Prefix="$HOME/.config"
+
+#decalare array of dirs
+declare -a SyncDirs
+
+#FOR ADD DIR TO SYNC EDIT THIS ARRAY INITIALIZATION
+SyncDirs=(i3 compton.conf mpd kitty rofi ranger ncmpcpp polybar)
