@@ -1,0 +1,367 @@
+# i3 config file (v4)
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+#
+# This config file uses keycodes (bindsym) and was written for the QWERTY
+# layout.
+#
+# To get a config file with the same key positions, but for your current
+# layout, use the i3-config-wizard
+#
+
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+# Variable setting
+set $Mod Mod4
+set $defaultmod $Mod
+
+
+
+
+# Configure border style <normal|1pixel|pixel xx|none|pixel>
+new_window none
+new_float none
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font xft:URWGothic-Book 11
+
+########## Autolaunch ##########
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
+exec --no-startup-id variety
+exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
+
+
+######### Autostart ############################33
+# настройка переключения раскладки клавиатуры
+exec --no-startup-id setxkbmap -layout us,ru && setxkbmap -option 'grp:win_space_toggle'
+
+exec --no-startup-id compton # включаем комптон для красивости
+
+#запуск файлового менеджера
+exec --no-startup-id ranger
+
+#Запуск dunst
+exec_always --no-startup-id dunst
+
+# запуск mpd , убиаваем все mpd, запускаем mpd, останавливаем проигрывание
+exec_always --no-startup-id killall mpd; mpd; mpc stop
+
+exec --no-startup-id syndaemon -d -i 1 -K -R
+
+#иконка обновлений
+exec --no-startup-id pamac-tray
+
+#автоблокировщик
+exec --no-startup-id xautolock -time 10 -locker LockScreen.sh
+
+#повер менеджер
+exec --no-startup-id xfce4-power-manager
+
+#запуск yandex-disk клиента для синхронизации
+exec --no-startup-id yandex-disk start
+
+########## Keybindings ##########
+#bindsym $Mod+Shift+s exec i3lock # Easier locking
+#код 39 - s
+bindcode $Mod+Shift+39 exec LockScreen.sh # Easier locking
+#код 46 - l
+bindcode $Mod+46 exec LockScreen.sh # Easier locking
+
+### Backlight ###
+# Note: If light doesn't work, install xbacklight and 1) uncomment the two lines below.
+# 2) Comment out the exec light lines.
+#bindsym XF86KbdBrightnessUp exec xbacklight -inc 10
+#bindsym XF86KbdBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec light -A 10 # Increase Brightness
+bindsym XF86MonBrightnessDown exec light -U 10 # Decrease Brightness
+
+### Pacman FM ####
+bindsym $mod+F3 exec pcmanfm
+
+### Media Player ###
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioNext exec playerctl next
+
+### Other ###
+#bindsym Print exec scrot -q 100
+bindsym Print exec flameshot gui
+
+### Sound ###
+# Raise Volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
+# Lower Volume
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle-mute # Toggle muting
+
+# Use Mouse+$Mod to drag floating windows to their wanted position
+floating_modifier $Mod
+
+# start a terminal
+bindsym $Mod+Return exec i3-sensible-terminal
+
+# kill focused window $Mod +
+bindsym $Mod+Shift+q kill
+
+# start dmenu (a program launcher) 40 - "d"
+#bindcode $Mod+40 exec rofi -combi-modi drun#run -show combi -show-icons -lines 10 -width 100 -monitor -1 -theme $HOME/.config/i3/rofi_theme.rasi
+bindcode $Mod+40 exec --no-startup-id RofiLouncher.sh
+
+# alternatively, you can use the cursor keys:
+bindsym $Mod+Left focus left
+bindsym $Mod+Down focus down
+bindsym $Mod+Up focus up
+bindsym $Mod+Right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $Mod+Shift+Left move left
+bindsym $Mod+Shift+Down move down
+bindsym $Mod+Shift+Up move up
+bindsym $Mod+Shift+Right move right
+
+# split in horizontal orientation 56 -b
+bindcode $Mod+56 split h
+
+# split in vertical orientation 55 - "v"
+bindcode $Mod+55 split v
+
+# enter fullscreen mode for the focused container 41 - "f"
+bindcode $Mod+41 fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split) 39 - "s"; 25-"w"; 26 - "e"
+bindcode $Mod+39 layout stacking
+bindcode $Mod+25 layout tabbed
+bindcode $Mod+26 layout toggle split
+
+# toggle tiling / floating
+bindsym $Mod+Shift+o floating toggle
+
+# change focus between tiling / floating windows
+bindsym $Mod+Shift+i focus mode_toggle
+
+# focus the parent container 38 - "a"
+bindcode $Mod+38 focus parent
+focus_follows_mouse no
+
+# focus the child container - 40 - "d"
+#bindcode $Mod+40 focus child
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $Mod+minus scratchpad show
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1: Common"
+set $ws2 "2: Browser "
+set $ws3 "3: FileManager "
+set $ws4 "4: Editor "
+set $ws5 "5: Code "
+set $ws6 "6: Office "
+set $ws7 "7: Virtual "
+set $ws8 "8"
+set $ws9 "9: Chat "
+set $ws10 "10: Media "
+
+# switch to workspace
+bindsym $Mod+1 workspace $ws1
+bindsym $Mod+2 workspace $ws2
+bindsym $Mod+3 workspace $ws3
+bindsym $Mod+4 workspace $ws4
+bindsym $Mod+5 workspace $ws5
+bindsym $Mod+6 workspace $ws6
+bindsym $Mod+7 workspace $ws7
+bindsym $Mod+8 workspace $ws8
+bindsym $Mod+9 workspace $ws9
+bindsym $Mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $Mod+Shift+1 move container to workspace $ws1
+bindsym $Mod+Shift+2 move container to workspace $ws2
+bindsym $Mod+Shift+3 move container to workspace $ws3
+bindsym $Mod+Shift+4 move container to workspace $ws4
+bindsym $Mod+Shift+5 move container to workspace $ws5
+bindsym $Mod+Shift+6 move container to workspace $ws6
+bindsym $Mod+Shift+7 move container to workspace $ws7
+bindsym $Mod+Shift+8 move container to workspace $ws8
+bindsym $Mod+Shift+9 move container to workspace $ws9
+bindsym $Mod+Shift+0 move container to workspace $ws10
+
+# Назначение программа на workspaces
+assign [class="(?i)firefox"] $ws2
+assign [class="(?i)vivaldi"] $ws2
+assign [class="Nautilus"] $ws3
+assign [class="Pcmanfm"] $ws3
+assign [class="Atom"] $ws4
+assign [class="code-oss"] $ws4
+assign [class="QtCreator"] $ws5
+assign [class="okular"] $ws6
+assign [instance="libreoffice"] $ws6
+assign [title="LibreOffice"] $ws6
+assign [class="Kodi"] $ws10
+assign [class="VirtualBox*"] $ws7
+assign [class="TelegramDesktop*"] $ws9
+assign [class="Geary*"] $ws9
+
+for_window [title="ranger"] move to workspace $ws3
+for_window [title="ncmpcpp"] border none move to workspace $ws10
+
+# Open specific applications in floating mode
+for_window [class="Clipgrab"] floating enable
+for_window [title="File Transfer*"] floating enable
+for_window [class="Galculator"] floating enable border 1pixel
+for_window [class="GParted"] floating enable
+for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="Steam"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="qt5ct"] floating enable sticky enable border normal
+for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+for_window [class="Simple-scan"] floating enable
+for_window [class="(?i)System-config-printer.py"] floating enable
+for_window [class="(?i)virtualbox manager"] floating enable
+for_window [window_role="toolbox*"] floating enable
+for_window [title="ncmpcpp"] floating enable
+for_window [class="kitty"] border 1pixel
+#make all floating windows without borders
+for_window [floating] border none
+# switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
+
+# move containerc
+bindsym $Mod+z move workspace to output left
+bindsym $Mod+x move workspace to output right
+
+# reload the configuration file
+bindsym $Mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3) - 27 - "r"
+bindcode $Mod+Shift+27 restart
+
+# exit i3 (logs you out of your X session)
+bindsym $Mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "Resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize grow height 10 px or 10 ppt
+        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $Mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $Mod+r mode "default"
+}
+# коде клавиши 27 - "r"
+bindcode $Mod+27 mode "Resize"
+
+set $editorOpen Open editor for: 1-GO projects; 2-Notes
+mode "$editorOpen" {
+	# открытие скриптов для открытия редактора в разных режимах
+	bindsym 1 exec --no-startup-id OpenGoProjects.sh
+	bindsym 2 exec --no-startup-id OpenNotes.sh
+	
+	#Выход из этого режима
+	bindsym Escape mode "default"
+	bindsym Return mode "default"
+}
+
+#включение режима открытия редактора 28 - "t"
+bindsym $Mod+t mode "$editorOpen"
+
+
+# включение и отключение тачпада
+bindsym Control+F8 exec --no-startup-id Togle_touchpad.sh
+
+
+# Color palette used for the terminal ( ~/.Xresources file )
+# Colors are gathered based on the documentation:
+# https://i3wm.org/docs/userguide.html#xresources
+# Change the variable name at the place you want to match the color
+# of your terminal like this:
+# [example]
+# If you want your bar to have the same background color as your
+# terminal background change the line 362 from:
+# background #14191D
+# to:
+# background $term_background
+# Same logic applied to everything else.
+set_from_resource $term_background background
+set_from_resource $term_foreground foreground
+set_from_resource $term_color0     color0
+set_from_resource $term_color1     color1
+set_from_resource $term_color2     color2
+set_from_resource $term_color3     color3
+set_from_resource $term_color4     color4
+set_from_resource $term_color5     color5
+set_from_resource $term_color6     color6
+set_from_resource $term_color7     color7
+set_from_resource $term_color8     color8
+set_from_resource $term_color9     color9
+set_from_resource $term_color10    color10
+set_from_resource $term_color11    color11
+set_from_resource $term_color12    color12
+set_from_resource $term_color13    color13
+set_from_resource $term_color14    color14
+set_from_resource $term_color15    color15
+
+
+
+########## Styling ##########
+set $sel_bc_cl #3e5767
+set $bc_col #374351
+set $sel_cl #c3d1d2
+set $usel_cl #344b55
+set $urgsel_cl #FF5852
+set $text_cl #d8e6eb
+set $urgent_text #F7551A
+set $indicator_cl #E64E3D
+
+# <colorclass>          <border>     <background>    <text>      <indicator>    <child_border>
+client.focused          $sel_cl      $sel_bc_cl     $text_cl     $indicator_cl     $sel_cl
+client.focused_inactive $usel_cl     $bc_col        $text_cl     $indicator_cl     $usel_cl
+client.unfocused        $usel_cl     $bc_col        $text_cl     $indicator_cl     $usel_cl
+client.urgent           $sel_cl      $bc_col        $urgent_text $indicator_cl     $urgsel_cl2
+client.background       $sel_cl
+
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+#bar {
+#}
+
+#запускаем полибар
+exec_always --no-startup-id $HOME/.config/i3/lounchpolybar.sh
+
+#############################
+### settings for i3-gaps: ###
+#############################
+
+gaps inner 10
+gaps outer 5 
+# Smart gaps (gaps used if only more than one container on the workspace)
+smart_gaps on
+
+# Smart border (draw border around container only if it is not the only container on this workspace)
+# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
+#smart_border no_gaps
+

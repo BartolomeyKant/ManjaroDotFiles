@@ -1,0 +1,500 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;==========================================================
+
+[colors]
+background = #55374351
+background-alt = #ff405F7D
+foreground = #dfdfdf
+foreground-alt = #a0a0a0
+primary = #ff086CD0
+secondary = #e60053
+alert = #bd2c40
+
+[common_params]
+bar_height=20
+border_size=0
+border_color=#00000000
+module_padding = 1
+line_size = 0
+
+fontAwesome = Font Awesome 5 Free Solid:size=8;2
+fontAwesomeBrand = Font Awesome 5 Brands:size=9;2
+fontOverText = fixed:pixelsize=8;0
+fontNerd = NotoSansMono Nerd Font:size=8;2
+fontOverTextBig = fixed:pixelsize=13;3
+fontI3spec = NotoSansMono Nerd Font:size=18;1
+
+
+[vars]
+leftBr = %{T5}[%{T-}
+rightBr = %{T5}]%{T-}
+
+[bar/workspaces_tray]
+monitor = ${env:PRIMMON:eDP1}
+width = 100%
+height = ${common_params.bar_height}
+
+offset-x = 1%
+;offset-y = 1%
+radius = 0
+
+line-size = ${common_params.line_size}
+
+override-redirect = false
+wm-restack = i3
+
+background = ${colors.background} 
+foreground = ${colors.foreground}
+
+border-size = ${common_params.border_size}
+border-color = ${common_params.border_color}
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = ${common_params.fontAwesome}
+font-1 = ${common_params.fontOverText}
+font-2 = ${common_params.fontAwesomeBrand}
+font-3 = ${common_params.fontNerd}
+font-4 = ${common_params.fontOverTextBig}
+font-5 = ${common_params.fontI3spec}
+
+separator =
+spacing = 0
+
+; Opacity value between 0.0 and 1.0 used on fade in/out
+dim-value = 1
+
+;;;;;;;;;;;;; Подключение модулей на бар
+modules-left = i3
+modules-center = date 
+modules-right = yandex_disk backlight-acpi pulseaudio xkeyboard battery powermenu
+
+[bar/workspaces_tray2]
+inherit = bar/workspaces_tray
+monitor = ${env:SECMON:HDMI1} 
+modules-right = 
+modules-center = 
+height =20 
+
+[bar/music_tray2]
+monitor = ${env:PRIMMON:eDP1}
+width = 100%
+height = ${common_params.bar_height}
+
+offset-x = 0%
+offset-y = 0%
+radius = 0
+bottom = true
+
+override-redirect = false
+wm-restack = i3
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = ${common_params.line_size}
+
+border-size = ${common_params.border_size}
+border-color = ${common_params.border_color}
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = ${common_params.fontAwesome}
+font-1 = ${common_params.fontOverText}
+font-2 = ${common_params.fontAwesomeBrand}
+font-3 = ${common_params.fontNerd}
+font-4 = ${common_params.fontOverTextBig}
+
+separator =
+spacing =
+; Opacity value between 0.0 and 1.0 used on fade in/out
+dim-value = 1
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+tray-position = right
+tray-padding = 0
+tray-background = ${colors.background}
+
+;;;;;;;;;;;;;;;; Modules
+modules-left = mpd
+modules-right = wlan wlan-home eth eth-home memory cpu temperature 
+
+
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 =
+
+; Available tags:
+;   <label-layout> (default)
+;   <label-indicator> (default)
+format = <label-layout><label-indicator>
+format-spacing = 1
+format-background = ${colors.background}
+format-padding = ${common_params.module_padding}
+
+format-prefix = ""
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-underline = ${colors.secondary}
+
+label-layout = %layout%
+label-layout-underline = ${colors.secondary}
+
+label-indicator = %name%
+label-indicator-padding = 0
+label-indicator-foreground = ${colors.foreground-alt}
+
+
+
+[module/i3]
+type = internal/i3
+format = <label-state><label-mode>
+format-background = #FF475666
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+pin-workspaces = true
+
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-foreground = ${colors.foreground}
+label-mode-background = ${colors.alert}
+
+; focused = Active workspace on focused monitor
+label-focused = %name%
+label-focused-background = ${colors.background-alt}
+label-focused-underline = ${colors.primary}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %name%
+label-unfocused-padding = 2
+label-unfocused-background = ${self.format-background}
+
+; visible = Active workspace on unfocused monitor
+label-visible = %name%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %name%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 0
+
+; Separator in between workspaces
+label-separator =
+label-separator-padding = 0
+label-separator-foreground = #00ffffff
+label-separator-background = #00ffffff
+
+[module/mpd]
+type = internal/mpd
+format-online =%{} %{T5}[%{T-}%{} <toggle>  Play Music  %{}%{T5}]%{T-}
+format-playing =%{}  %{T5}[%{T-}%{} <icon-prev>   <icon-stop>   <toggle>   <icon-next>   <label-song> <bar-progress> %{} %{T5}]%{T-}
+
+format-paused = ${self.format-playing}
+format-stopped = ${self.format-online}
+
+format-offline = <label-offline>
+
+format-online-background = ${colors.background}
+format-offline-background = ${colors.background}
+
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause =
+icon-next = 
+
+bar-progress-width = 60
+bar-progress-indicator = |
+bar-progress-indicator-foreground = #6296FD
+bar-progress-fill = .
+bar-progress-fill-foreground = #af5555
+bar-progress-empty = .
+bar-progress-empty-foreground =${colors.foreground-alt}
+
+label-song = %artist% - %title%
+label-song-maxlen = 150
+label-song-ellipsis = true
+
+label-offline =%{}%{A1:mpc play:} mpd is offline%{A}%{}
+
+[module/backlight-acpi]
+inherit = module/xbacklight
+type = internal/backlight
+card = intel_backlight
+
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <bar>
+format-background = ${colors.background}
+format-padding = ${common_params.module_padding}
+label =
+
+bar-width = 10
+bar-indicator = 
+bar-indicator-font = 1
+bar-indicator-foreground = #ffdddd
+
+bar-fill = |
+bar-fill-font = 2
+bar-fill-foreground = #ff5555
+bar-empty = .
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground-alt}
+
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = %{T5}[%{T-} %{A1:i3-sensible-terminal -e htop:}cpu %{A}
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #E8CD47
+format-background = ${colors.background}
+;format-padding = ${common_params.module_padding}
+label = %percentage:2%% %{T5}]%{T-}
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = %{T5}[%{T-} %{A1:i3-sensible-terminal -e htop:}mem %{A}
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #4bffdc
+format-background = ${colors.background}
+;format-padding = ${common_params.module_padding}
+label = %percentage_used%% %{T5}]%{T-}
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+
+format-connected = %{T5}[%{T-}<ramp-signal> <label-connected>%{T5}]%{T-}
+format-connected-underline = #9f78e1
+label-connected = %{A1:nm-connection-editor:}%essid% - ip://%local_ip%%{A}  %upspeed%  %downspeed%
+
+;format-connected-padding = ${common_params.module_padding}
+
+;format-disconnected =
+format-disconnected = <label-disconnected>
+format-disconnected-underline = ${colors.foreground-alt}
+label-disconnected = %{T5}[%{T-}< %{A1:nm-connection-editor:}disconnected%{A} %{T5}]%{T-}
+
+label-disconnected-foreground = ${colors.foreground-alt}
+;format-disconnected-padding = ${common_params.module_padding}
+
+
+ramp-signal-0 = |
+ramp-signal-1 = ||
+ramp-signal-2 = |||
+ramp-signal-3 = ||||
+ramp-signal-4 = |||||
+ramp-signal-5 = full
+ramp-signal-0-foreground = #55aaff
+ramp-signal-1-foreground = #5588ff
+ramp-signal-2-foreground = #5570ff
+ramp-signal-3-foreground = #55c0ff
+ramp-signal-4-foreground = #55d5ff
+ramp-signal-5-foreground = #55ffff
+
+[module/wlan-home]
+inherit = module/wlan
+type = internal/network
+interface = wlp6s0
+
+[module/eth]
+inherit = module/wlan
+interface = enp6s0
+interval = 3.0
+format-connected = %{T5}[%{T-}<label-connected>%{T5}]%{T-}
+label-connected = %{A1:nm-connection-editor:}%ifname% - ip://%local_ip%%{A}  %upspeed%  %downspeed%
+
+
+[module/eth-home]
+inherit = module/eth
+type = internal/network
+interface = enp7s0
+interval = 3.0
+
+
+
+
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+#;date-alt = " %Y-%m-%d"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix = %{A1:gsimplecal:}%{A}
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #0a6cf5
+format-background = ${colors.background}
+format-padding = ${common_params.module_padding}
+
+label = %date% %time%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume-background = ${colors.background}
+format-volume-padding = ${common_params.module_padding}
+format-muted-background = ${colors.background}
+format-muted-padding = ${common_params.module_padding}
+
+format-volume = <bar-volume>
+label-volume = %percentage%%
+label-volume-foreground = ${root.foreground}
+
+label-muted = muted
+label-muted-foreground = #666
+
+bar-volume-width = 15
+bar-volume-foreground-0 = #55aaff
+bar-volume-foreground-1 = #55aadd
+bar-volume-foreground-2 = #55aabb
+bar-volume-foreground-3 = #55AA99
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = true
+bar-volume-indicator = 
+bar-volume-indicator-font = 2
+bar-volume-fill = |
+bar-volume-fill-font = 2
+bar-volume-empty = .
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 98
+
+poll-interval = 3
+
+format-charging-background = ${colors.background}
+format-discharging-background = ${colors.background}
+format-full-background = ${colors.background}
+
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = #ffb52a
+format-charging-padding = ${common_params.module_padding}
+
+format-discharging =<ramp-capacity> <label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+format-discharging-padding = ${common_params.module_padding}
+
+format-full-prefix =
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-underline = ${self.format-charging-underline}
+format-full-padding = ${common_params.module_padding}
+
+label-full = 
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 750
+
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-foreground = ${colors.foreground-alt}
+animation-discharging-framerate = 750
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = %{T5}[%{T-} <ramp> <label>%{T5}]%{T-}
+format-underline = #f50a4d
+format-warn = %{T5}[%{T-} <ramp> <label-warn> %{T5}]%{T-}
+format-warn-underline = ${self.format-underline}
+format-background = ${colors.background}
+format-warn-background = ${colors.background}
+;format-padding = ${common_params.module_padding}
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-foreground = ${colors.foreground-alt}
+hwmon-path = /sys/class/hwmon/hwmon0/temp1_input
+
+[module/powermenu]
+type = custom/text
+content = ""
+content-background = ${colors.background}
+content-foreground = ${colors.secondary}
+content-padding = 5
+
+click-left = RofiOnOfComputer.sh enabled >> /dev/null
+
+[module/yandex_disk]
+type = custom/script
+exec = CheckYDState.py
+interval = 5
+label-font = 4
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+; vim:ft=dosini
