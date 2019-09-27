@@ -1,0 +1,5 @@
+[module/void_spacer]
+type = custom/text
+content = %{F#00ffffff}--%{F-}
+content-background = ${colors.background}
+content-foreground = ${colors.secondary}

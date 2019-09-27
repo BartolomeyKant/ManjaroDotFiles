@@ -157,16 +157,16 @@ bindsym $Mod+minus scratchpad show
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: Common"
-set $ws2 "2: Browser "
-set $ws3 "3: FileManager "
-set $ws4 "4: Editor "
-set $ws5 "5: Code "
-set $ws6 "6: Office "
-set $ws7 "7: Virtual "
-set $ws8 "8"
-set $ws9 "9: Chat "
-set $ws10 "10: Media "
+set $ws1 "1:"
+set $ws2 "2:"
+set $ws3 "3:"
+set $ws4 "4:"
+set $ws5 "5:"
+set $ws6 "6:"
+set $ws7 "7:"
+set $ws8 "8:"
+set $ws9 "9:"
+set $ws10 "10:"
 
 # switch to workspace
 bindsym $Mod+1 workspace $ws1
@@ -193,20 +193,18 @@ bindsym $Mod+Shift+9 move container to workspace $ws9
 bindsym $Mod+Shift+0 move container to workspace $ws10
 
 # Назначение программа на workspaces
-assign [class="(?i)firefox"] $ws2
-assign [class="(?i)vivaldi"] $ws2
-assign [class="Nautilus"] $ws3
-assign [class="Pcmanfm"] $ws3
+assign [class="(?i)firefox"] $ws3
+assign [class="(?i)vivaldi"] $ws3
 assign [class="Atom"] $ws4
 assign [class="code-oss"] $ws4
 assign [class="QtCreator"] $ws5
 assign [class="okular"] $ws6
 assign [instance="libreoffice"] $ws6
 assign [title="LibreOffice"] $ws6
-assign [class="Kodi"] $ws10
 assign [class="VirtualBox*"] $ws7
 assign [class="TelegramDesktop*"] $ws9
 assign [class="Geary*"] $ws9
+assign [class="Kodi"] $ws10
 
 for_window [title="ranger"] move to workspace $ws3
 for_window [title="ncmpcpp"] border none move to workspace $ws10
@@ -279,7 +277,7 @@ mode "$editorOpen" {
 	# открытие скриптов для открытия редактора в разных режимах
 	bindsym 1 exec --no-startup-id OpenGoProjects.sh
 	bindsym 2 exec --no-startup-id OpenNotes.sh
-	
+
 	#Выход из этого режима
 	bindsym Escape mode "default"
 	bindsym Return mode "default"
@@ -357,11 +355,10 @@ exec_always --no-startup-id $HOME/.config/i3/lounchpolybar.sh
 #############################
 
 gaps inner 10
-gaps outer 5 
+gaps outer 5
 # Smart gaps (gaps used if only more than one container on the workspace)
 smart_gaps on
 
 # Smart border (draw border around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 #smart_border no_gaps
-

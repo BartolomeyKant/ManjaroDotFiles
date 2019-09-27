@@ -1,0 +1,9 @@
+[colors]
+background = #121b1b
+background-alt = #ff405F7D
+foreground = #dfdfdf
+foreground-alt = #a0a0a0
+primary = #ff086CD0
+secondary = #e60053
+alert = #bd2c40
+selected = #DDD224

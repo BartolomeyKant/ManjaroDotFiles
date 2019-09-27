@@ -1,0 +1,6 @@
+mpd/database
+mpd/log
+mpd/pid
+mpd/state
+ranger/**__pycache__/*
+

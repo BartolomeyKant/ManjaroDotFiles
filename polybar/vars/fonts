@@ -1,0 +1,6 @@
+[fonts]
+fontMainText = Droid Sans Mono:style=Regular:size=8;2
+
+fontAwesome = Font Awesome 5 Free Solid:size=8;2
+fontAwesomeBrand = Font Awesome 5 Brands:size=9;2
+fontNerd = NotoSansMono Nerd Font:size=8;2
