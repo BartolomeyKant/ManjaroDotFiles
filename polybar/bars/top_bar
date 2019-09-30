@@ -4,7 +4,7 @@ width = 100%
 height = ${layouts.bar-height}
 
 offset-x = 0
-offset-y = 4
+offset-y = 0
 radius = 0
 
 border-top-size =2

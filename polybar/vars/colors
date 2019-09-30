@@ -1,5 +1,6 @@
 [colors]
-background = #121b1b
+background = #0C2D3E
+;#121b1b
 background-alt = #ff405F7D
 foreground = #dfdfdf
 foreground-alt = #a0a0a0
