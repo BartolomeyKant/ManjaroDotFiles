@@ -2,5 +2,7 @@ mpd/database
 mpd/log
 mpd/pid
 mpd/state
-ranger/**__pycache__/*
+ranger/**/__pycache__/*
+ranger/**/__init__.py
+**/error.log
 
