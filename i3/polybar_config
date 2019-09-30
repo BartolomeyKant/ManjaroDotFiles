@@ -58,7 +58,7 @@ line-size = ${common_params.line_size}
 override-redirect = false
 wm-restack = i3
 
-background = ${colors.background} 
+background = ${colors.background}
 foreground = ${colors.foreground}
 
 border-size = ${common_params.border_size}
@@ -85,15 +85,15 @@ dim-value = 1
 
 ;;;;;;;;;;;;; Подключение модулей на бар
 modules-left = i3
-modules-center = date 
+modules-center = date
 modules-right = yandex_disk backlight-acpi pulseaudio xkeyboard battery powermenu
 
 [bar/workspaces_tray2]
 inherit = bar/workspaces_tray
-monitor = ${env:SECMON:HDMI1} 
-modules-right = 
-modules-center = 
-height =20 
+monitor = ${env:SECMON:HDMI1}
+modules-right =
+modules-center =
+height =20
 
 [bar/music_tray2]
 monitor = ${env:PRIMMON:eDP1}
@@ -142,7 +142,7 @@ tray-background = ${colors.background}
 
 ;;;;;;;;;;;;;;;; Modules
 modules-left = mpd
-modules-right = wlan wlan-home eth eth-home memory cpu temperature 
+modules-right = wlan wlan-home eth eth-home memory cpu temperature
 
 
 
@@ -348,9 +348,6 @@ inherit = module/eth
 type = internal/network
 interface = enp7s0
 interval = 3.0
-
-
-
 
 [module/date]
 type = internal/date

@@ -1,0 +1,49 @@
+[module/music]
+type = internal/mpd
+format-online =  Play Music <toggle>
+format-playing = <label-song> <bar-progress> <icon-stop><toggle><icon-prev><icon-next>
+
+format-paused = ${self.format-playing}
+format-stopped = ${self.format-online}
+
+format-offline = <label-offline>
+
+format-online-background = ${colors.background}
+format-offline-background = ${colors.background}
+
+icon-font = 7
+
+icon-prev = ﭣ
+icon-stop = ﭦ
+icon-play = 奈
+icon-pause = 
+icon-next = ﭡ
+
+icon-prev-font = ${self.icon-font}
+icon-stop-font = ${self.icon-font}
+icon-play-font = ${self.icon-font}
+icon-pause-font = ${self.icon-font}
+icon-next-font = ${self.icon-font}
+
+;icon-prev = 
+;icon-stop = 
+;icon-play = 
+;icon-pause =
+;icon-next = 
+
+bar-progress-width = 30
+bar-progress-indicator = |
+bar-progress-indicator-font = 6
+bar-progress-indicator-foreground = #6296FD
+bar-progress-fill = .
+bar-progress-fill-font = 6
+bar-progress-fill-foreground = #508A99
+bar-progress-empty = .
+bar-progress-empty-font = 6
+bar-progress-empty-foreground =${colors.foreground-alt}
+
+label-song = %artist% - %title%
+label-song-maxlen = 150
+label-song-ellipsis = true
+
+label-offline =%{}%{A1:mpc play:} mpd is offline%{A}%{}

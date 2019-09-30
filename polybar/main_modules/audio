@@ -1,0 +1,32 @@
+[module/audio]
+type = internal/pulseaudio
+
+format-volume-background = ${colors.background}
+format-muted-background = ${colors.background}
+
+format-volume =  <bar-volume>
+
+
+format-muted = <label-muted>
+label-muted =  ...................
+label-muted-font = 6
+label-muted-foreground = #666
+
+bar-volume-width = 20
+bar-volume-foreground-0 = #55aaff
+bar-volume-foreground-1 = #55aadd
+bar-volume-foreground-2 = #55aabb
+bar-volume-foreground-3 = #55AA99
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = true
+
+bar-volume-indicator = |
+bar-volume-indicator-font = 6
+bar-volume-indicator-foreground = #6296FD
+bar-volume-fill =.
+bar-volume-fill-font = 6
+bar-volume-empty =.
+bar-volume-empty-font = 6
+bar-volume-empty-foreground = ${colors.foreground-alt}

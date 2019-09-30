@@ -31,7 +31,7 @@ include-file=$HOME/.config/polybar/vars/layouts
 
 ;;;;;;;;;;;;;; AUX MODULES ;;;;;;;;;;;;
 include-file=$HOME/.config/polybar/aux_modules/void_spacer
+include-file=$HOME/.config/polybar/aux_modules/arrow_spacer
 
 ;;;;;;;;;;;;;; BARS ;;;;;;;;;;;;;;;;;;;;;;
-
 include-file=$HOME/.config/polybar/bars/top_bar

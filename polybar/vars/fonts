@@ -4,3 +4,6 @@ fontMainText = Droid Sans Mono:style=Regular:size=8;2
 fontAwesome = Font Awesome 5 Free Solid:size=8;2
 fontAwesomeBrand = Font Awesome 5 Brands:size=9;2
 fontNerd = NotoSansMono Nerd Font:size=8;2
+largeIcons = TerminessTTF Nerd Font:style=Regular:size=18;3
+barFont = Droid Sans:style=Regular:size=8;1
+musicButtonsFont = TerminessTTF Nerd Font:style=Regular:size=14;3

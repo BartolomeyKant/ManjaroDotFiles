@@ -1,15 +1,24 @@
 [bar/top]
 ;monitor = ${env:PRIMMON:eDP1}
-width = 600
+width = 100%
 height = ${layouts.bar-height}
 
 offset-x = 0
-offset-y = 20
+offset-y = 4
 radius = 0
+
+border-top-size =2
+border-bottom-size =2
+border-color = ${self.background}
 
 ;;;; fonts
 font-0 = ${fonts.fontMainText}
 font-1 = ${fonts.fontAwesome}
+font-2 = ${fonts.fontAwesomeBrand}
+font-3 = ${fonts.fontNerd}
+font-4 = ${fonts.largeIcons}
+font-5 = ${fonts.barFont}
+font-6 = ${fonts.musicButtonsFont}
 
 ;;;; lines
 line-size = 1
@@ -21,7 +30,28 @@ wm-restack = i3
 background = #00ffffff
 foreground = #ffffff
 
-modules-left = void_spacer date void_spacer i3
+module-margin-right = 0
+module-margin-left  = 0
+
+fixed-center = true
+
+
+; Position of the system tray window
+tray-position = right
+; If true, the bar will not shift its
+; contents when the tray changes
+tray-detached = false
+; Tray icon max size
+tray-maxsize = 16
+tray-background = ${colors.background}
+
+modules-left = void_spacer date void_spacer i3 void_spacer end_right
+modules-center = end_left void_spacer music  void_spacer end_right
+modules-right = end_left void_spacer eth  void_spacer audio void_spacer
+
 
 include-file = $HOME/.config/polybar/main_modules/date
 include-file = $HOME/.config/polybar/main_modules/i3
+include-file = $HOME/.config/polybar/main_modules/audio
+include-file = $HOME/.config/polybar/main_modules/networks
+include-file = $HOME/.config/polybar/main_modules/music

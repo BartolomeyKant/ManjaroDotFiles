@@ -6,4 +6,5 @@ foreground-alt = #a0a0a0
 primary = #ff086CD0
 secondary = #e60053
 alert = #bd2c40
-selected = #DDD224
+selected = #E6D215
+transparent = #00111111

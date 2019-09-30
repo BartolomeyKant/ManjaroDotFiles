@@ -1,0 +1,38 @@
+[module/network]
+type = internal/network
+
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>%
+label-connected = %{A1:nm-connection-editor:}%essid% - ip://%local_ip%%{A}  %upspeed%  %downspeed%
+
+format-connected-background = ${colors.background}
+
+format-disconnected = <label-disconnected>
+format-disconnected-underline = ${colors.foreground-alt}
+label-disconnected = %{A1:nm-connection-editor:}disconnected%{A}
+
+label-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected-background = ${colors.background}
+
+
+
+ramp-signal-0 = .....
+ramp-signal-1 = /....
+ramp-signal-2 = //...
+ramp-signal-3 = ///..
+ramp-signal-4 = ////.
+ramp-signal-5 = /////
+ramp-signal-0-foreground = #55aaff
+ramp-signal-1-foreground = #5588ff
+ramp-signal-2-foreground = #5570ff
+ramp-signal-3-foreground = #55c0ff
+ramp-signal-4-foreground = #55d5ff
+ramp-signal-5-foreground = #55ffff
+
+[module/eth]
+inherit = module/network
+interface = enp6s0
+interval = 3.0
+format-connected = <label-connected>
+label-connected = %{A1:nm-connection-editor:}ip://%local_ip%%{A}

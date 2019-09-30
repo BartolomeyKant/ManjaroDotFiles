@@ -10,13 +10,8 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 export PRIMMON=$(GetMonitor.sh pri)
 export SECMON=$(GetMonitor.sh sec)
 
-# Launch bar1 and bar2
+# Launch bar top
+polybar top &
 
-polybar -c $HOME/.config/i3/polybar_config workspaces_tray -r &
-polybar -c $HOME/.config/i3/polybar_config music_tray2 -r &
-
-polybar -c $HOME/.config/i3/polybar_config workspaces_tray2 -r &
-
-#polybar bar2 &
 
 echo "Bars launched..."
