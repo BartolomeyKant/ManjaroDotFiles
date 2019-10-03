@@ -35,7 +35,6 @@ module-margin-left  = 0
 
 fixed-center = true
 
-
 ; Position of the system tray window
 tray-position = right
 ; If true, the bar will not shift its
@@ -47,11 +46,4 @@ tray-background = ${colors.background}
 
 modules-left = void_spacer date void_spacer i3 void_spacer end_right
 modules-center = end_left void_spacer music  void_spacer end_right
-modules-right = end_left void_spacer eth  void_spacer audio void_spacer
-
-
-include-file = $HOME/.config/polybar/main_modules/date
-include-file = $HOME/.config/polybar/main_modules/i3
-include-file = $HOME/.config/polybar/main_modules/audio
-include-file = $HOME/.config/polybar/main_modules/networks
-include-file = $HOME/.config/polybar/main_modules/music
+modules-right = end_left void_spacer keyboard  void_spacer audio void_spacer powermenu void_spacer

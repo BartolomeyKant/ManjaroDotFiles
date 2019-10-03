@@ -1,0 +1,19 @@
+[module/keyboard]
+type = internal/xkeyboard
+blacklist-0 =
+
+; Available tags:
+;   <label-layout> (default)
+;   <label-indicator> (default)
+format = <label-layout><label-indicator>
+format-spacing = 1
+format-background = ${colors.background}
+
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+
+label-layout = %layout%
+
+label-indicator = %name%
+label-indicator-padding = 0
+label-indicator-foreground = ${colors.foreground-alt}

@@ -9,3 +9,5 @@ secondary = #e60053
 alert = #bd2c40
 selected = #E6D215
 transparent = #00111111
+network_top_border = #a44a4a
+system_top_border = #47733E

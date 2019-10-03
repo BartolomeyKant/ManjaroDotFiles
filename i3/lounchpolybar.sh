@@ -12,6 +12,7 @@ export SECMON=$(GetMonitor.sh sec)
 
 # Launch bar top
 polybar top &
-
+polybar network_bar &
+polybar system_stats_bar &
 
 echo "Bars launched..."

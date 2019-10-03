@@ -150,28 +150,7 @@ modules-right = wlan wlan-home eth eth-home memory cpu temperature
 type = internal/xwindow
 label = %title:0:30:...%
 
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 =
 
-; Available tags:
-;   <label-layout> (default)
-;   <label-indicator> (default)
-format = <label-layout><label-indicator>
-format-spacing = 1
-format-background = ${colors.background}
-format-padding = ${common_params.module_padding}
-
-format-prefix = ""
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
-
-label-indicator = %name%
-label-indicator-padding = 0
-label-indicator-foreground = ${colors.foreground-alt}
 
 
 

@@ -4,9 +4,14 @@ content=%{T5}%{T-}
 content-background = ${colors.transparent}
 content-foreground = ${colors.background}
 
-
 [module/end_left]
 inherite=module/void_spacer
 content=%{T5}%{T-}
+content-background = ${colors.transparent}
+content-foreground = ${colors.background}
+
+[module/triang_left_top]
+inherite=module/void_spacer
+content=%{T5}%{T-}
 content-background = ${colors.transparent}
 content-foreground = ${colors.background}

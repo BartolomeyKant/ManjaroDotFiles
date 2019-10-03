@@ -33,5 +33,19 @@ include-file=$HOME/.config/polybar/vars/layouts
 include-file=$HOME/.config/polybar/aux_modules/void_spacer
 include-file=$HOME/.config/polybar/aux_modules/arrow_spacer
 
+;;;;;;;;;;;;;; MODULES ;;;;;;;;;;;;;;;;
+include-file = $HOME/.config/polybar/main_modules/date
+include-file = $HOME/.config/polybar/main_modules/i3
+include-file = $HOME/.config/polybar/main_modules/audio
+include-file = $HOME/.config/polybar/main_modules/networks
+include-file = $HOME/.config/polybar/main_modules/music
+include-file = $HOME/.config/polybar/main_modules/keyboard
+include-file = $HOME/.config/polybar/main_modules/cpu
+include-file = $HOME/.config/polybar/main_modules/memory
+include-file = $HOME/.config/polybar/main_modules/temperature
+include-file = $HOME/.config/polybar/main_modules/powermenu
+
 ;;;;;;;;;;;;;; BARS ;;;;;;;;;;;;;;;;;;;;;;
 include-file=$HOME/.config/polybar/bars/top_bar
+include-file=$HOME/.config/polybar/bars/network_bar
+include-file=$HOME/.config/polybar/bars/system_stats_bar
