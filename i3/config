@@ -66,8 +66,6 @@ exec --no-startup-id yandex-disk start
 #bindsym $Mod+Shift+s exec i3lock # Easier locking
 #код 39 - s
 bindcode $Mod+Shift+39 exec LockScreen.sh # Easier locking
-#код 46 - l
-bindcode $Mod+46 exec LockScreen.sh # Easier locking
 
 ### Backlight ###
 # Note: If light doesn't work, install xbacklight and 1) uncomment the two lines below.
@@ -116,11 +114,30 @@ bindsym $Mod+Shift+q kill
 #bindcode $Mod+40 exec rofi -combi-modi drun#run -show combi -show-icons -lines 10 -width 100 -monitor -1 -theme $HOME/.config/i3/rofi_theme.rasi
 bindcode $Mod+40 exec --no-startup-id RofiLouncher.sh
 
+
+# for moving focus and windows use hjkl
+set $left h
+set $right l
+set $down j
+set $up k
+
+# move focus
+bindsym $Mod+$left focus left
+bindsym $Mod+$down focus down
+bindsym $Mod+$up focus up
+bindsym $Mod+$right focus right
+
 # alternatively, you can use the cursor keys:
 bindsym $Mod+Left focus left
 bindsym $Mod+Down focus down
 bindsym $Mod+Up focus up
 bindsym $Mod+Right focus right
+
+#move window
+bindsym $Mod+Shift+$left move left
+bindsym $Mod+Shift+$down move down
+bindsym $Mod+Shift+$up move up
+bindsym $Mod+Shift+$right move right
 
 # alternatively, you can use the cursor keys:
 bindsym $Mod+Shift+Left move left
