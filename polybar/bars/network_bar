@@ -33,4 +33,4 @@ module-margin-left  = 0
 
 fixed-center = true
 
-modules-right = triang_left_top void_spacer eth void_spacer void_spacer void_spacer
+modules-right = triang_left_top void_spacer eth void_spacer void_spacer void_spacer void_spacer void_spacer void_spacer  void_spacer void_spacer void_spacer void_spacer void_spacer
