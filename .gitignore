@@ -1,8 +1,10 @@
 mpd/database
+mpd/dbfile
+mpd/*.sql
 mpd/log
 mpd/pid
 mpd/state
 ranger/**/__pycache__/*
-ranger/**/__init__.py
+ranger/**/__init__*
 **/error.log
 

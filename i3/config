@@ -37,7 +37,11 @@ exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 # настройка переключения раскладки клавиатуры
 exec --no-startup-id setxkbmap -layout us,ru && setxkbmap -option 'grp:win_space_toggle'
 
-exec --no-startup-id compton # включаем комптон для красивости
+# включаем комптон для красивости
+exec --no-startup-id compton 
+
+# ставим не скучные обои
+exec_always --no-startup-id feh --bg-fill --bg-center $HOME/Pictures/backgrounds/current_bg
 
 #запуск файлового менеджера
 exec --no-startup-id ranger
@@ -225,7 +229,7 @@ assign [class="okular"] $ws6
 assign [instance="libreoffice"] $ws6
 assign [title="LibreOffice"] $ws6
 assign [class="VirtualBox*"] $ws7
-assign [class="steam*"] $ws8
+assign [class="(?i)steam*"] $ws8
 assign [class="TelegramDesktop*"] $ws9
 assign [class="Geary*"] $ws9
 assign [class="Kodi"] $ws10
