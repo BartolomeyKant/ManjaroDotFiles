@@ -1,15 +1,15 @@
-[bar/system_stats_bar]
+[bar/def_bar]
 ;monitor = ${env:PRIMMON:eDP1}
-width = 250
-height = ${layouts.aux-bar-height}
+width = 100%
+height = ${layouts.bar-height}
 
-offset-x = 1669
-offset-y = 35
+offset-x = 0
+offset-y = 0
 radius = 0
 
-border-top-size =5
-border-bottom-size =0
-border-top-color = ${colors.system_top_border}
+border-top-size =2
+border-bottom-size =2
+border-color = ${self.background}
 
 ;;;; fonts
 font-0 = ${fonts.fontMainText}
@@ -18,11 +18,13 @@ font-2 = ${fonts.fontAwesomeBrand}
 font-3 = ${fonts.fontNerd}
 font-4 = ${fonts.largeIcons}
 font-5 = ${fonts.barFont}
+font-6 = ${fonts.musicButtonsFont}
 
 ;;;; lines
 line-size = 1
+line-color = #f00
 
-override-redirect = true
+override-redirect = false
 wm-restack = i3
 
 background = #00ffffff
@@ -33,4 +35,3 @@ module-margin-left  = 0
 
 fixed-center = true
 
-modules-right = triang_left_top void_spacer cpu void_spacer memory void_spacer temperature void_spacer void_spacer void_spacer

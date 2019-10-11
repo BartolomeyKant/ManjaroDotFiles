@@ -12,7 +12,14 @@ export SECMON=$(GetMonitor.sh sec)
 
 # Launch bar top
 polybar top &
-polybar network_bar &
+
+# in home notebook we start wifi bar
+if [[ $USER = 'bugdruhman' ]] ; then
+    polybar network_wifi_bar &
+else
+    polybar network_bar &
+fi
+
 polybar system_stats_bar &
 
 echo "Bars launched..."

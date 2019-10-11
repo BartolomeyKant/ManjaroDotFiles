@@ -46,6 +46,8 @@ include-file = $HOME/.config/polybar/main_modules/temperature
 include-file = $HOME/.config/polybar/main_modules/powermenu
 
 ;;;;;;;;;;;;;; BARS ;;;;;;;;;;;;;;;;;;;;;;
+include-file=$HOME/.config/polybar/bars/def_bar
 include-file=$HOME/.config/polybar/bars/top_bar
 include-file=$HOME/.config/polybar/bars/network_bar
+include-file=$HOME/.config/polybar/bars/network_wifi_bar
 include-file=$HOME/.config/polybar/bars/system_stats_bar

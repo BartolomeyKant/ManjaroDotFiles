@@ -1,36 +1,19 @@
 [bar/network_bar]
-;monitor = ${env:PRIMMON:eDP1}
+
+inherit = bar/def_bar
+
 width = 160
 height = ${layouts.aux-bar-height}
 
 offset-x = 1759
 offset-y = 75
-radius = 0
 
 border-top-size =5
 border-bottom-size =0
 border-top-color = ${colors.network_top_border}
 
-;;;; fonts
-font-0 = ${fonts.fontMainText}
-font-1 = ${fonts.fontAwesome}
-font-2 = ${fonts.fontAwesomeBrand}
-font-3 = ${fonts.fontNerd}
-font-4 = ${fonts.largeIcons}
-font-5 = ${fonts.barFont}
-
-;;;; lines
-line-size = 1
 
 override-redirect = true
 wm-restack = i3
-
-background = #00ffffff
-foreground = #ffffff
-
-module-margin-right = 0
-module-margin-left  = 0
-
-fixed-center = true
 
 modules-right = triang_left_top void_spacer eth void_spacer void_spacer void_spacer void_spacer void_spacer void_spacer  void_spacer void_spacer void_spacer void_spacer void_spacer

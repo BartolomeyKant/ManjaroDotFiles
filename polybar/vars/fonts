@@ -1,9 +1,9 @@
 [fonts]
-fontMainText = Terminus:style=Bold:size=8;2
+fontMainText = OpenDyslexicAlta NF :style=Bold:size=10;2
 
 fontAwesome = Font Awesome 5 Free Solid:size=8;2
 fontAwesomeBrand = Font Awesome 5 Brands:size=9;2
 fontNerd = NotoSansMono Nerd Font:size=8;2
-largeIcons = FuraCode Nerd Font:size=16;4
+largeIcons =  Iosevka Nerd Font:size=16;4
 barFont = Droid Sans:style=Regular:size=8;1
-musicButtonsFont = TerminessTTF Nerd Font:style=Regular:size=14;3
+musicButtonsFont = Iosevka Nerd Font:style=Regular:size=14;3

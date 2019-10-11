@@ -1,39 +1,5 @@
 [bar/top]
-;monitor = ${env:PRIMMON:eDP1}
-width = 100%
-height = ${layouts.bar-height}
-
-offset-x = 0
-offset-y = 0
-radius = 0
-
-border-top-size =2
-border-bottom-size =2
-border-color = ${self.background}
-
-;;;; fonts
-font-0 = ${fonts.fontMainText}
-font-1 = ${fonts.fontAwesome}
-font-2 = ${fonts.fontAwesomeBrand}
-font-3 = ${fonts.fontNerd}
-font-4 = ${fonts.largeIcons}
-font-5 = ${fonts.barFont}
-font-6 = ${fonts.musicButtonsFont}
-
-;;;; lines
-line-size = 1
-line-color = #f00
-
-override-redirect = false
-wm-restack = i3
-
-background = #00ffffff
-foreground = #ffffff
-
-module-margin-right = 0
-module-margin-left  = 0
-
-fixed-center = true
+inherit = bar/def_bar
 
 ; Position of the system tray window
 tray-position = right
