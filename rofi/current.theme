@@ -42,10 +42,10 @@
     highlight:     bold #ffffff;
 }
 #window {
-    height:   100%;
-    width: 30em;
-    location: west;
-    anchor:   west;
+    height: 35 %;
+    width: 45 %;
+    location: center;
+    anchor:   center;
     border: 20px 2px 20px 20px;
     text-color: white;
 }
@@ -59,15 +59,20 @@
     border-color: green;
     text-color: green;
 }
+
 #inputbar {
     background-color: black;
     text-color: green;
     padding: 4px;
-    border: 0px 0px 2px 0px;
+    border: 10px 10px 10px 10px;
 }
+
+#entry {
+    text-color: lightblue;
+}
+
 #mainbox {
     expand: true;
-    //background-color: #1c1cee;
     spacing: 1em;
 }
 #listview {
