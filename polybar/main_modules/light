@@ -1,0 +1,31 @@
+[module/light]
+inherit = module/xbacklight
+type = internal/backlight
+card = intel_backlight
+
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <bar>
+format-background = ${colors.background}
+label =
+
+bar-width = 20
+bar-indicator = 
+bar-indicator-font = 3
+bar-indicator-foreground = #ffdddd
+
+bar-foreground-0 = #881111
+bar-foreground-1 = #993333
+bar-foreground-2 = #AA5555
+bar-foreground-3 = #BB7777
+bar-foreground-4 = #CC9999
+bar-foreground-5 = #DDCCCC
+bar-foreground-6 = #FFEEEE
+bar-gradient = true
+
+bar-fill =.
+bar-fill-font = 6
+bar-empty =.
+bar-empty-font = 6
+bar-empty-foreground = ${colors.foreground-alt}

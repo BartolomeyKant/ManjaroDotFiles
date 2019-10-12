@@ -12,4 +12,4 @@ tray-background = ${colors.background}
 
 modules-left = void_spacer date void_spacer i3 void_spacer end_right
 modules-center = end_left void_spacer music  void_spacer end_right
-modules-right = end_left void_spacer keyboard  void_spacer audio void_spacer battery void_spacer powermenu void_spacer
+modules-right = end_left void_spacer keyboard void_spacer light void_spacer audio void_spacer battery void_spacer powermenu void_spacer

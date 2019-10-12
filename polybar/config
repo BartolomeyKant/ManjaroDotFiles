@@ -36,6 +36,7 @@ include-file=$HOME/.config/polybar/aux_modules/arrow_spacer
 ;;;;;;;;;;;;;; MODULES ;;;;;;;;;;;;;;;;
 include-file = $HOME/.config/polybar/main_modules/date
 include-file = $HOME/.config/polybar/main_modules/i3
+include-file = $HOME/.config/polybar/main_modules/light
 include-file = $HOME/.config/polybar/main_modules/audio
 include-file = $HOME/.config/polybar/main_modules/networks
 include-file = $HOME/.config/polybar/main_modules/music
