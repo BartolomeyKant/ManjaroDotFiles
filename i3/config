@@ -175,6 +175,10 @@ bindsym $Mod+Shift+i focus mode_toggle
 bindcode $Mod+38 focus parent
 focus_follows_mouse no
 
+# открываем translator для перевода последнего выбранного текста
+# 28 - t
+bindcode $Mod+Shift+28 exec --no-startup-id "TranslatorOpen.sh ru"
+
 # focus the child container - 40 - "d"
 #bindcode $Mod+40 focus child
 
@@ -253,6 +257,7 @@ for_window [class="(?i)System-config-printer.py"] floating enable
 for_window [class="(?i)virtualbox manager"] floating enable
 for_window [window_role="toolbox*"] floating enable
 for_window [title="ncmpcpp"] floating enable
+for_window [instance="translatorT"] floating enable
 for_window [class="kitty"] border 1pixel
 #make all floating windows without borders
 for_window [floating] border none
@@ -312,7 +317,6 @@ mode "$editorOpen" {
 
 #включение режима открытия редактора 28 - "t"
 bindsym $Mod+t mode "$editorOpen"
-
 
 # включение и отключение тачпада
 bindsym Control+F8 exec --no-startup-id Togle_touchpad.sh
