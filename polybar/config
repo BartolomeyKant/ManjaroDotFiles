@@ -43,6 +43,7 @@ include-file = $HOME/.config/polybar/main_modules/keyboard
 include-file = $HOME/.config/polybar/main_modules/cpu
 include-file = $HOME/.config/polybar/main_modules/memory
 include-file = $HOME/.config/polybar/main_modules/temperature
+include-file = $HOME/.config/polybar/main_modules/battery
 include-file = $HOME/.config/polybar/main_modules/powermenu
 
 ;;;;;;;;;;;;;; BARS ;;;;;;;;;;;;;;;;;;;;;;
