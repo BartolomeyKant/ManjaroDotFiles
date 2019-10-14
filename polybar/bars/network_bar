@@ -2,10 +2,10 @@
 
 inherit = bar/def_bar
 
-width = 160
+width = 200
 height = ${layouts.aux-bar-height}
 
-offset-x = 1759
+offset-x = 1730
 offset-y = 75
 
 border-top-size =5

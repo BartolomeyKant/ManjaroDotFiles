@@ -38,13 +38,10 @@ exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id setxkbmap -layout us,ru && setxkbmap -option 'grp:win_space_toggle'
 
 # включаем комптон для красивости
-exec --no-startup-id compton 
+exec --no-startup-id compton
 
 # ставим не скучные обои
 exec_always --no-startup-id feh --bg-fill --bg-center $HOME/Pictures/backgrounds/current_bg
-
-#запуск файлового менеджера
-exec --no-startup-id ranger
 
 #Запуск dunst
 exec_always --no-startup-id dunst
@@ -71,7 +68,7 @@ exec_always --no-startup-id killall compton; compton
 ########## Keybindings ##########
 #bindsym $Mod+Shift+s exec i3lock # Easier locking
 #код 39 - s
-bindcode $Mod+Shift+39 exec LockScreen.sh # Easier locking
+bindcode $Mod+Shift+39 exec LockScreen.sh
 
 ### Backlight ###
 # Note: If light doesn't work, install xbacklight and 1) uncomment the two lines below.
@@ -117,9 +114,7 @@ bindsym $Mod+Return exec i3-sensible-terminal
 bindsym $Mod+Shift+q kill
 
 # start dmenu (a program launcher) 40 - "d"
-#bindcode $Mod+40 exec rofi -combi-modi drun#run -show combi -show-icons -lines 10 -width 100 -monitor -1 -theme $HOME/.config/i3/rofi_theme.rasi
 bindcode $Mod+40 exec --no-startup-id RofiLouncher.sh
-
 
 # for moving focus and windows use hjkl
 set $left h
