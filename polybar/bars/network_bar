@@ -12,7 +12,6 @@ border-top-size =5
 border-bottom-size =0
 border-top-color = ${colors.network_top_border}
 
-
 override-redirect = true
 wm-restack = i3
 

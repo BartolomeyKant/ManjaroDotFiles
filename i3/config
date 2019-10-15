@@ -29,7 +29,6 @@ font xft:URWGothic-Book 11
 ########## Autolaunch ##########
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
-exec --no-startup-id variety
 exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 
 
@@ -37,8 +36,8 @@ exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 # настройка переключения раскладки клавиатуры
 exec --no-startup-id setxkbmap -layout us,ru && setxkbmap -option 'grp:win_space_toggle'
 
-# включаем комптон для красивости
-exec --no-startup-id compton
+#запуск комптона для супер красивости
+exec_always --no-startup-id killall compton; compton
 
 # ставим не скучные обои
 exec_always --no-startup-id feh --bg-fill --bg-center $HOME/Pictures/backgrounds/current_bg
@@ -49,6 +48,7 @@ exec_always --no-startup-id dunst
 # запуск mpd , убиаваем все mpd, запускаем mpd, останавливаем проигрывание
 exec_always --no-startup-id killall mpd; mpd; mpc stop
 
+# драйвер синаптика
 exec --no-startup-id syndaemon -d -i 1 -K -R
 
 #иконка обновлений
@@ -62,8 +62,6 @@ exec --no-startup-id xfce4-power-manager
 
 #запуск yandex-disk клиента для синхронизации
 exec --no-startup-id yandex-disk start
-
-exec_always --no-startup-id killall compton; compton
 
 ########## Keybindings ##########
 #bindsym $Mod+Shift+s exec i3lock # Easier locking
@@ -174,9 +172,6 @@ focus_follows_mouse no
 # 28 - t
 bindcode $Mod+Shift+28 exec --no-startup-id "TranslatorOpen.sh ru"
 
-# focus the child container - 40 - "d"
-#bindcode $Mod+40 focus child
-
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $Mod+minus scratchpad show
@@ -252,7 +247,7 @@ for_window [class="(?i)System-config-printer.py"] floating enable
 for_window [class="(?i)virtualbox manager"] floating enable
 for_window [window_role="toolbox*"] floating enable
 for_window [title="ncmpcpp"] floating enable
-for_window [instance="translatorT"] floating enable
+for_window [instance="translator"] floating enable
 for_window [class="kitty"] border 1pixel
 #make all floating windows without borders
 for_window [floating] border none
