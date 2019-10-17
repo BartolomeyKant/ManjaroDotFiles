@@ -4,7 +4,7 @@ width = 250
 height = ${layouts.aux-bar-height}
 
 offset-x = 1669
-offset-y = 35
+offset-y = ${layouts.system-bar-top}
 radius = 0
 
 border-top-size =5

@@ -1,3 +1,5 @@
 [layouts]
 bar-height=20
 aux-bar-height = 25
+network-bar-top = 85
+system-bar-top = 40
