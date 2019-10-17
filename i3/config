@@ -40,7 +40,7 @@ exec --no-startup-id setxkbmap -layout us,ru && setxkbmap -option 'grp:win_space
 exec_always --no-startup-id killall compton; compton
 
 # ставим не скучные обои
-exec_always --no-startup-id feh --bg-fill --bg-center $HOME/Pictures/backgrounds/current_bg
+exec_always --no-startup-id feh --bg-center --bg-fill  $HOME/Pictures/backgrounds/current_bg
 
 #Запуск dunst
 exec_always --no-startup-id dunst
