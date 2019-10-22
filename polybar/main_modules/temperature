@@ -5,8 +5,8 @@ warn-temperature = 60
 
 format = <ramp> <label>
 format-warn =  <ramp> <label-warn>
-format-background = ${colors.background}
-format-warn-background = ${colors.background}
+format-background = ${colors.system_background}
+format-warn-background = ${colors.system_background}
 
 label = %temperature-c%
 label-warn = %temperature-c%

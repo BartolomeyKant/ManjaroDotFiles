@@ -6,13 +6,13 @@ interval = 3.0
 format-connected = <ramp-signal> <label-connected>
 label-connected = %{A1:nm-connection-editor:}%essid% - ip://%local_ip%%{A}
 
-format-connected-background = ${colors.background}
+format-connected-background = ${colors.network_background}
 
 format-disconnected = <label-disconnected>
 label-disconnected = %{A1:nm-connection-editor:}disconnected%{A}
 
 label-disconnected-foreground = ${colors.foreground-alt}
-format-disconnected-background = ${colors.background}
+format-disconnected-background = ${colors.network_background}
 
 
 

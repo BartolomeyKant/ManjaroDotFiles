@@ -8,11 +8,11 @@ height = ${layouts.aux-bar-height}
 offset-x = 1730
 offset-y = ${layouts.network-bar-top}
 
-border-top-size =5
+border-top-size =0
 border-bottom-size =0
-border-top-color = ${colors.network_top_border}
+border-top-color = #00ffffff
 
 override-redirect = true
 wm-restack = i3
 
-modules-right = triang_left_top void_spacer eth void_spacer void_spacer void_spacer void_spacer void_spacer void_spacer  void_spacer void_spacer void_spacer void_spacer void_spacer
+modules-right = network_left_end network_spacer eth network_spacer network_spacer network_spacer network_spacer network_spacer network_spacer  network_spacer network_spacer network_spacer network_spacer network_spacer
