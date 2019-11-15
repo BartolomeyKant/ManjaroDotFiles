@@ -7,4 +7,5 @@ mpd/state
 ranger/**/__pycache__/*
 ranger/**/__init__*
 **/error.log
+ncmpcpp/lyrics/
 

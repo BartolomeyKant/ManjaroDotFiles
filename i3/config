@@ -31,10 +31,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 
-
-######### Autostart ############################33
 # настройка переключения раскладки клавиатуры
-exec --no-startup-id setxkbmap -layout us,ru && setxkbmap -option 'grp:win_space_toggle'
+exec_always --no-startup-id setxkbmap -layout us,ru && setxkbmap -option 'grp:win_space_toggle'
 
 #запуск комптона для супер красивости
 exec_always --no-startup-id killall compton; compton
