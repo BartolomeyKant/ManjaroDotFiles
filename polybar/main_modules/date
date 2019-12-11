@@ -3,15 +3,15 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = " %d-%m-%Y"
+date-alt = "%d-%m-%Y"
 
 time = %H:%M
-time-alt = %H:%M:%S //
+time-alt = %H:%M:%S//
 
-format-prefix = 
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #0a6cf5
 format-background = ${colors.background}
 
-label = %time% %date%
+label = %time%%date%
 label-font = 1

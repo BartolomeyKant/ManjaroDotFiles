@@ -373,7 +373,7 @@ exec_always --no-startup-id $HOME/.config/i3/lounchpolybar.sh
 ### settings for i3-gaps: ###
 #############################
 
-gaps inner 10
+gaps inner 5
 gaps outer 5
 # Smart gaps (gaps used if only more than one container on the workspace)
 smart_gaps on

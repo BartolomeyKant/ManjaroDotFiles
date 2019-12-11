@@ -18,7 +18,7 @@
 ;
 ;
 ;	MAIN POLYBAR CONFIGURATION FILE
-;
+;1
 
 ;;;;;;;;;;;;;; COLORS ;;;;;;;;;;;;;;;;;;;
 include-file=$HOME/.config/polybar/vars/colors
@@ -46,6 +46,7 @@ include-file = $HOME/.config/polybar/main_modules/memory
 include-file = $HOME/.config/polybar/main_modules/temperature
 include-file = $HOME/.config/polybar/main_modules/battery
 include-file = $HOME/.config/polybar/main_modules/powermenu
+include-file = $HOME/.config/polybar/main_modules/window_title
 
 ;;;;;;;;;;;;;; BARS ;;;;;;;;;;;;;;;;;;;;;;
 include-file=$HOME/.config/polybar/bars/def_bar

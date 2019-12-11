@@ -8,7 +8,31 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
 
-strip-wsnumbers = false
+strip-wsnumbers = true
+
+; set $ws1 "1: "
+; set $ws2 "2: "
+; set $ws3 "3: "
+; set $ws4 "4: "
+; set $ws5 "5: "
+; set $ws6 "6: "
+; set $ws7 "7: "
+; set $ws8 "8: "
+; set $ws9 "9: "
+; set $ws10 "10: "
+
+ws-icon-0 = 1: ;I
+ws-icon-1 = 2: ;II
+ws-icon-2 = 3: ;III
+ws-icon-3 = 4: ;IV
+ws-icon-4 = 5: ;V
+ws-icon-5 = 6: ;VI
+ws-icon-6 = 7: ;VII
+ws-icon-7 = 8: ;VIII
+ws-icon-8 = 9: ;IX
+ws-icon-9 = 10: ;X
+
+ws-icon-default = --
 
 padding = 1
 
@@ -20,22 +44,22 @@ label-mode-background = ${colors.alert}
 ; focused = Active workspace on focused monitor
 label-focused = %name%
 label-focused-background = ${colors.background}
-label-focused-underline = ${colors.selected}
-label-focused-padding = ${self.padding}
+label-focused-foreground = ${colors.primary}
+label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %name%
+label-unfocused = %icon%
 label-unfocused-padding = ${self.padding}
+label-unfocused-foreground = ${colors.foreground-alt}
 label-unfocused-background = ${self.format-background}
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %name%
+label-visible = %icon%
 label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %name%
+label-urgent = %icon%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = ${self.padding}
 

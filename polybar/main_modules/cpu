@@ -3,5 +3,5 @@ type = internal/cpu
 interval = 2
 format-prefix = %{A1:i3-sensible-terminal -e htop:}cpu %{A}
 format-prefix-foreground = ${colors.foreground-alt}
-format-background = ${colors.system_background}
+format-background = ${colors.background}
 label = %percentage:2%%

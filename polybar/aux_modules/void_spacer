@@ -11,3 +11,9 @@ content-background = ${colors.network_background}
 [module/system_spacer]
 inherite = module/void_spacer
 content-background = ${colors.system_background}
+
+
+[module/transparent_spacer]
+inherite = module/void_spacer
+content = %{F#00ffffff}----------%{F-}
+content-background = #00000000

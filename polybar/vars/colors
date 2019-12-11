@@ -1,10 +1,10 @@
 [colors]
-background = #0C2D3E
+background = #3e5767
 ;#121b1b
 background-alt = #ff405F7D
 foreground = #dfdfdf
-foreground-alt = #a0a0a0
-primary = #ff086CD0
+foreground-alt = #616F7C
+primary = #B6D3F1
 secondary = #e60053
 alert = #bd2c40
 selected = #E6D215
@@ -13,3 +13,4 @@ network_top_border = #a44a4a
 network_background = #22546F
 system_top_border = #47733E
 system_background = #145141
+`

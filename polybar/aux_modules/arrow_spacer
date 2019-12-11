@@ -10,6 +10,18 @@ content=%{T5}%{T-}
 content-background = ${colors.transparent}
 content-foreground = ${colors.background}
 
+[module/end_left_reverse]
+type = custom/text
+content=%{T5}%{T-}
+content-background = ${colors.transparent}
+content-foreground = ${colors.background}
+
+[module/end_right_reverse]
+type = custom/text
+content=%{T5}%{T-}
+content-background = ${colors.transparent}
+content-foreground = ${colors.background}
+
 [module/network_left_end]
 inherite=module/end_left
 content-foreground = ${colors.network_background}
